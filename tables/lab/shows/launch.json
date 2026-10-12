@@ -1,0 +1,16 @@
+{
+  "id": "launch",
+  "description": "T2, light.launch (5.3): the plunger lane's lamps sweep up with the ball in 300 ms, and the lower region is hot for 120 ms.",
+  "tier": 2,
+  "length": 500,
+  "tracks": [
+    { "lamps": "meter.plunger", "blend": "accent", "envelope": "glint", "sweep": { "dir": "up", "duration": 300, "ease": "in" } },
+    {
+      "lamps": "gi.lower",
+      "keys": [
+        { "t": 0, "level": 8, "colour": "amber" },
+        { "t": 120, "level": "under", "ease": "linear" }
+      ]
+    }
+  ]
+}

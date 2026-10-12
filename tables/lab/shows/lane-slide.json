@@ -1,0 +1,8 @@
+{
+  "id": "lane-slide",
+  "description": "T1, lane.change (5.3, R10): a glint across the set in 60 ms the way the lit lanes slide, so the eye follows the rules moving them.",
+  "tier": 1,
+  "length": 200,
+  "tokens": { "set": "lanes.torch" },
+  "tracks": [{ "lamps": "$set", "blend": "accent", "envelope": "glint", "sweep": { "dir": "right", "duration": 60, "ease": "linear" } }]
+}

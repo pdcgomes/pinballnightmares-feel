@@ -1,0 +1,29 @@
+{
+  "id": "multiball-start",
+  "description": "T5, light.multiball (5.3): while its balls are held, it seizes the table. The general illumination goes to 1 and every insert out for 300 ms, the lagoon dark; then the light comes back hot from the origin with two rings over the inserts and the flasher bursting twice (three large flashes); when the seize ends, its reveal shows what's lit, and the multiball look takes over.",
+  "tier": 5,
+  "length": 2200,
+  "seize": "whenHeld",
+  "tokens": { "origin": "caps", "colour": "gold" },
+  "tracks": [
+    {
+      "lamps": "gi",
+      "keys": [
+        { "t": 0, "level": 1 },
+        { "t": 300, "level": 8, "colour": "$colour" },
+        { "t": 700, "level": 8 },
+        { "t": 2200, "level": "under", "ease": "inOut", "land": true }
+      ]
+    },
+    {
+      "lamps": "inserts",
+      "keys": [
+        { "t": 0, "level": 0 },
+        { "t": 300, "level": "under" }
+      ]
+    },
+    { "lamps": ["caps", "slings"], "keys": [{ "t": 0, "level": 0 }, { "t": 300, "level": "under" }], "to": 300 },
+    { "lamps": "inserts", "envelope": "glint", "from": 300, "radial": { "origin": "$origin", "speed": 700, "rings": 2 } },
+    { "lamps": "flasher.orbit", "envelope": "burst", "at": [450, 800] }
+  ]
+}

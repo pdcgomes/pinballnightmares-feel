@@ -1,0 +1,21 @@
+{
+  "id": "jackpot",
+  "description": "T5, light.jackpot (the lighting bible's 4.6) on the lab: the general illumination draws breath and comes back hot in gold, the flasher bursts twice, two rings run out from the shot over every insert, its ladder chases toward it, and the return to the look lands on a beat. Three large flashes in the first second. The lab has no torches to flare.",
+  "tier": 5,
+  "length": 2400,
+  "tokens": { "shot": "loop-left", "colour": "gold" },
+  "tracks": [
+    {
+      "lamps": "gi",
+      "keys": [
+        { "t": 0, "level": 2 },
+        { "t": 120, "level": 8, "colour": "$colour" },
+        { "t": 520, "level": 8 },
+        { "t": 2400, "level": "under", "ease": "inOut", "land": true }
+      ]
+    },
+    { "lamps": "flasher.$shot", "envelope": "burst", "at": [340, 680] },
+    { "lamps": "inserts", "blend": "accent", "envelope": "glint", "radial": { "origin": "arrow.$shot", "speed": 700, "rings": 2 } },
+    { "lamps": "ladder.$shot", "blend": "accent", "envelope": "glint", "from": 700, "chase": { "step": "0.25b", "toward": "arrow.$shot" } }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "format": 1,
+  "id": "lab",
+  "version": 1,
+  "name": "The feel lab's rules: the table bible's 7.2 and its first combo, 7.3",
+  "notes": "Section 3.2's values for the lab's devices, lane change on the torch and T-I-D-E lanes, the skill shot into the torch lanes, the 8 s ball save with 1.5 s of grace, the loops alternating as the first combo, three balls, the drain, the next ball and game over, with section 5's words. No tide, bonus count, tilt or extra ball: section 7.2 leaves them out.",
+  "game": { "balls": 3, "players": 1, "nextBall": 2000 },
+  "debounce": 50,
+  "shots": [
+    { "id": "loop.left", "name": "LEFT LOOP", "lamp": "arrow.loop-left", "switches": ["loop.left:up", "loop.right:down"], "within": 2000, "notes": "Up the left lane, round the top arc and down the right one (table bible 3.1, rule 2)" },
+    { "id": "loop.right", "name": "RIGHT LOOP", "lamp": "arrow.loop-right", "switches": ["loop.right:up", "loop.left:down"], "within": 2000 }
+  ],
+  "streaks": [
+    { "id": "buoys", "devices": ["buoy.top", "buoy.left", "buoy.right"], "within": 600 },
+    { "id": "slings", "devices": ["sling.left", "sling.right"], "within": 600 }
+  ],
+  "counters": [
+    { "id": "loops", "count": "loop.made", "reset": "ball", "notes": "Loops made this ball, for the loop's value" },
+    { "id": "multiplier", "from": 1, "most": 5, "reset": "ball", "notes": "The bonus multiplier, raised by the torch lanes; the lab counts no bonus" }
+  ],
+  "modes": [
+    { "id": "attract", "priority": 0, "runs": "attract" },
+    {
+      "id": "base",
+      "priority": 100,
+      "band": "rules",
+      "runs": "game",
+      "lanes": [
+        {
+          "id": "torch",
+          "event": "torchlanes",
+          "change": true,
+          "counter": "multiplier",
+          "lanes": [
+            { "switch": "torch.left", "lane": "torch-1", "lamp": "lane.torch-1" },
+            { "switch": "torch.middle", "lane": "torch-2", "lamp": "lane.torch-2" },
+            { "switch": "torch.right", "lane": "torch-3", "lamp": "lane.torch-3" }
+          ]
+        },
+        {
+          "id": "tide",
+          "event": "tidelanes",
+          "change": true,
+          "lanes": [
+            { "switch": "lane.t", "lane": "t", "lamp": "lane.t", "outlane": true },
+            { "switch": "lane.i", "lane": "i", "lamp": "lane.i" },
+            { "switch": "lane.d", "lane": "d", "lamp": "lane.d" },
+            { "switch": "lane.e", "lane": "e", "lamp": "lane.e", "outlane": true }
+          ]
+        }
+      ],
+      "scores": [
+        { "on": "sling.fire", "points": 1000 },
+        { "on": "buoy.fire", "points": 5000 },
+        { "on": "lane.roll", "when": { "lit": true }, "points": 10000 },
+        { "on": "lane.roll", "when": { "lit": false }, "points": 1000 },
+        { "on": "loop.made", "points": 100000, "plus": 25000, "per": "loops", "most": 300000 },
+        { "on": "torchlanes.complete", "when": { "raised": true }, "points": 100000 },
+        { "on": "torchlanes.complete", "when": { "raised": false }, "points": 500000, "notes": "At 5x the multiplier can't rise: 500,000 instead" },
+        { "on": "tidelanes.complete", "points": 100000 }
+      ]
+    },
+    {
+      "id": "combo",
+      "priority": 200,
+      "band": "rules",
+      "runs": "game",
+      "combo": {
+        "shots": ["loop.left", "loop.right"],
+        "window": 4000,
+        "most": 5,
+        "hurry": 1000,
+        "next": { "loop.left": ["loop.right"], "loop.right": ["loop.left"] },
+        "ladders": [
+          ["ladder.loop-left.1", "ladder.loop-left.2", "ladder.loop-left.3"],
+          ["ladder.loop-right.1", "ladder.loop-right.2", "ladder.loop-right.3"]
+        ],
+        "steps": { "2": "COMBO", "3": "SUPER COMBO", "4": "RIPTIDE", "5": "TIDAL WAVE", "6": "MAELSTROM" },
+        "named": [
+          {
+            "name": "figure-eight",
+            "title": "FIGURE EIGHT",
+            "inRow": [
+              ["loop.left", "loop.right", "loop.left"],
+              ["loop.right", "loop.left", "loop.right"]
+            ],
+            "award": 1000000
+          }
+        ],
+        "notes": "A loop returns to the far flipper, which makes the other loop: the continuing shot is the other loop (table bible 2.4, 3.5 and 7.3)"
+      },
+      "scores": [
+        { "on": "combo.step", "points": "extra", "source": "combo", "notes": "The nth shot scores its value times n: the shot its value, the combo the rest" },
+        { "on": "combo.named", "points": "award", "source": "combo.{name}" }
+      ]
+    },
+    {
+      "id": "ball",
+      "priority": 600,
+      "band": "rules",
+      "runs": "game",
+      "ballSave": { "ms": 8000, "grace": 1500, "hurry": 2000, "relaunch": 800, "pull": 1, "lamp": "shoot-again" },
+      "skillShot": { "lanes": "torch", "lane": "torch.middle", "within": 3000 },
+      "scores": [{ "on": "skillshot.made", "points": 500000 }]
+    }
+  ],
+  "words": {
+    "game.start": ["PLAYER {player}", "BALL {ball}"],
+    "ball.start": ["PLAYER {player}", "BALL {ball}"],
+    "ball.drain": { "when": { "last": true, "saved": false }, "text": "OVER THE FALLS" },
+    "ballsave.save": ["BALL SAVED"],
+    "loop.made": ["{name}", "{value}"],
+    "combo.step": [
+      { "when": { "n": { "max": 5 } }, "text": "{name} ×{n}", "text2": "{value}" },
+      { "text": "{name}", "text2": "×{n} {value}" }
+    ],
+    "combo.named": ["{title}", "{award}"],
+    "combo.end": { "when": { "n": { "min": 3 } }, "text": "CHAIN OF {n}" },
+    "skillshot.made": ["SKILL SHOT", "{value}"],
+    "torchlanes.complete": ["TORCHES LIT", "BONUS {multiplier}X"],
+    "tidelanes.complete": ["TIDE RISES", "{value}"],
+    "game.over": ["GAME OVER", "{score}"]
+  },
+  "objectives": [
+    { "when": "attract", "text": "PRESS START", "text2": "LIGHTS OUT AT TEN" },
+    { "when": ["shooter", "skillshot"], "text": "PULL TO LAUNCH", "text2": "SKILL SHOT LIT" },
+    { "when": "shooter", "text": "PULL TO LAUNCH", "text2": "" },
+    { "when": "combo", "text": "{next}: COMBO!", "text2": "{time}" },
+    { "when": "play", "text": "SHOOT A LOOP", "text2": "" }
+  ]
+}

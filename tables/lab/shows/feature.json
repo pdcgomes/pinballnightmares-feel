@@ -1,0 +1,20 @@
+{
+  "id": "feature",
+  "description": "T4 at a shot (5.1), the combo's third and fourth rungs and the skill shot: two rings over every insert from the shot, the whole general illumination hot in the answer's colour (up in 120 ms, back over 500), its flasher twice.",
+  "tier": 4,
+  "length": 1000,
+  "tokens": { "shot": "loop-left", "colour": "gold", "region": "gi.upper" },
+  "tracks": [
+    { "lamps": "inserts", "blend": "accent", "envelope": "glint", "radial": { "origin": "arrow.$shot", "speed": 700, "rings": 2 } },
+    {
+      "lamps": "gi",
+      "keys": [
+        { "t": 0, "level": "under" },
+        { "t": 120, "level": 8, "colour": "$colour", "ease": "linear" },
+        { "t": 620, "level": "under", "ease": "out" }
+      ]
+    },
+    { "lamps": "flasher.$shot", "envelope": "flash", "at": [0, 420] },
+    { "lamps": "arrow.$shot", "blend": "accent", "envelope": "glint", "at": [0] }
+  ]
+}

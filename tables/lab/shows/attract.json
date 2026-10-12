@@ -1,0 +1,36 @@
+{
+  "id": "attract",
+  "description": "The feel lab's attract (the lighting bible's 6.2 and 9.7), a 40-beat loop, 20 s at 120 BPM: night, a sweep up the inserts every 4 beats; the lamp test, each family flickering in turn; patterns, sweeps down and across and a radial from the caps, the two regions alternating on the beat; torchlight, the caps turning and the flasher swelling. Accents only on the inserts, so it can run over a game's lamps too; it keeps to the flash budget.",
+  "tier": 0,
+  "units": "beats",
+  "length": 40,
+  "loop": true,
+  "envelopes": {
+    "glow": [
+      { "t": 0, "level": "under" },
+      { "t": 0.06, "level": 7, "ease": "linear" },
+      { "t": 0.24, "level": "under", "ease": "linear" }
+    ],
+    "swell": [
+      { "t": 0, "level": "under" },
+      { "t": 1, "level": 6, "ease": "inOut" },
+      { "t": 2, "level": "under", "ease": "inOut" }
+    ]
+  },
+  "tracks": [
+    { "lamps": "gi", "keys": [{ "t": 0, "level": 3 }, { "t": 6, "level": 3 }, { "t": 8, "level": 7, "ease": "inOut" }], "to": 8 },
+    { "lamps": "inserts", "blend": "accent", "envelope": "glint", "sweep": { "dir": "up", "duration": 2, "ease": "linear" }, "to": 4 },
+    { "lamps": "inserts", "blend": "accent", "envelope": "glint", "sweep": { "dir": "up", "duration": 2, "ease": "linear" }, "from": 4, "to": 8 },
+    { "lamps": "arrows", "blend": "accent", "envelope": "glow", "chase": { "step": 0.5, "on": 1, "off": 0 }, "from": 8, "to": 10 },
+    { "lamps": "ladders", "blend": "accent", "envelope": "glow", "chase": { "step": 0.5, "on": 1, "off": 0 }, "from": 10, "to": 12 },
+    { "lamps": "lanes", "blend": "accent", "envelope": "glow", "chase": { "step": 0.5, "on": 1, "off": 0 }, "from": 12, "to": 14 },
+    { "lamps": ["meter.plunger", "shoot-again"], "blend": "accent", "envelope": "glow", "chase": { "step": 0.5, "on": 1, "off": 0 }, "from": 14, "to": 16 },
+    { "lamps": "inserts", "blend": "accent", "envelope": "glint", "from": 16, "to": 20, "sweep": { "dir": "down", "duration": 2, "ease": "out" } },
+    { "lamps": "inserts", "blend": "accent", "envelope": "glint", "from": 20, "to": 24, "sweep": { "dir": "right", "duration": 2, "ease": "out" } },
+    { "lamps": "inserts", "blend": "accent", "envelope": "glint", "from": 24, "to": 28, "radial": { "origin": "caps", "speed": 400, "rings": 2, "gap": 0.5 } },
+    { "lamps": "gi.upper", "envelope": "swell", "at": [16, 20, 24], "from": 0, "to": 28 },
+    { "lamps": "gi.lower", "envelope": "swell", "at": [18, 22, 26], "from": 0, "to": 28 },
+    { "lamps": "caps", "envelope": "blip", "rotate": { "turn": 1.5 }, "from": 28, "to": 40 },
+    { "lamps": "flasher.orbit", "envelope": "swell", "at": [32, 36], "from": 0, "to": 40 }
+  ]
+}

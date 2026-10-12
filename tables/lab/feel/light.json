@@ -1,0 +1,13 @@
+{
+  "name": "light",
+  "gravity": 863,
+  "maxSpeed": 2200,
+  "flipper": { "upSpeed": 32 },
+  "materials": {
+    "metal": { "restitution": [[0, 0.62], [600, 0.68], [2400, 0.62]], "friction": 0.04 },
+    "wood": { "restitution": [[0, 0.58], [600, 0.62], [2400, 0.58]], "friction": 0.08 },
+    "plastic": { "restitution": [[0, 0.58], [600, 0.62], [2400, 0.58]], "friction": 0.06 },
+    "rubber": { "restitution": [[0, 0.7], [300, 0.8], [1200, 0.85], [2400, 0.8]], "friction": 0.2 },
+    "flipper": { "restitution": [[0, 0.1], [900, 0.12], [1500, 0.45], [2800, 0.55]], "friction": 0.4 }
+  }
+}

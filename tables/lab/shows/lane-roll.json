@@ -1,0 +1,8 @@
+{
+  "id": "lane-roll",
+  "description": "T1, light.lane (5.3): the ball rolling over a lane blips its lamp, an accent, so a lane the rules have lit stays lit and an unlit one only flickers past (R4). The rules' set lights the lamp when they land.",
+  "tier": 1,
+  "length": 200,
+  "tokens": { "lamp": "lane.t" },
+  "tracks": [{ "lamps": "$lamp", "blend": "accent", "envelope": "blip" }]
+}

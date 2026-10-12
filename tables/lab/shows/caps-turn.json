@@ -1,0 +1,7 @@
+{
+  "id": "caps-turn",
+  "description": "T2, the three buoys hit within 1,000 ms (light.bumper, 5.3): one turn round the three caps, 80 ms each.",
+  "tier": 2,
+  "length": 400,
+  "tracks": [{ "lamps": "caps", "envelope": "blip", "rotate": { "turn": 240 } }]
+}

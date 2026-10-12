@@ -1,0 +1,10 @@
+{
+  "default": "arcade.json",
+  "presets": [
+    { "file": "arcade.json", "description": "The recommended start: shots about 1,700 px/s, gravity 1.6x, lively walls and rubber, low friction, flippers dead to slow hits so returns can be caught" },
+    { "file": "snappy.json", "description": "Arcade with flippers that answer at once: full speed from the press, up in one frame (17 ms, arcade's take 36) and back in 25 ms; shots about 1,800 px/s, the strongest at the 2,600 cap" },
+    { "file": "light.json", "description": "Floaty and easy to follow: shots about 1,550 px/s, gravity 1.25x, the liveliest walls and rubber, the least friction" },
+    { "file": "heavy.json", "description": "A heavy ball that comes back fast: shots about 1,700 px/s and up to 2,100, gravity 2x, deader walls, punchy rubber" },
+    { "file": "real.json", "description": "Today's numbers, a real machine's at this size: shots to 2,900 px/s, the slope's gravity, dead walls" }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "climax",
+  "description": "T5 at a shot (5.1), the combo from its fifth rung: the general illumination draws breath and comes back hot, its flasher bursts twice (three large flashes in the first second, the budget), two rings over every insert, the ladder chasing toward the shot, the return landing on a beat.",
+  "tier": 5,
+  "length": 2400,
+  "tokens": { "shot": "loop-left", "colour": "white", "region": "gi.upper" },
+  "tracks": [
+    {
+      "lamps": "gi",
+      "keys": [
+        { "t": 0, "level": 2 },
+        { "t": 120, "level": 8, "colour": "$colour" },
+        { "t": 520, "level": 8 },
+        { "t": 2400, "level": "under", "ease": "inOut", "land": true }
+      ]
+    },
+    { "lamps": "flasher.$shot", "envelope": "burst", "at": [340, 680] },
+    { "lamps": "inserts", "blend": "accent", "envelope": "glint", "radial": { "origin": "arrow.$shot", "speed": 700, "rings": 2 } },
+    { "lamps": "ladder.$shot", "blend": "accent", "envelope": "glint", "from": 700, "chase": { "step": "0.25b", "toward": "arrow.$shot" } }
+  ]
+}

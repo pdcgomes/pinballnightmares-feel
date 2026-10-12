@@ -1,0 +1,20 @@
+{
+  "id": "power-on",
+  "description": "Game start (6.3): the general illumination held dark while a sweep catches each region from the flippers up, each with one electric flicker (out for 40 ms); then every insert glints in a sweep up, like an old machine waking.",
+  "tier": 4,
+  "length": 1600,
+  "tracks": [
+    { "lamps": "gi", "keys": [{ "t": 0, "level": 0 }] },
+    {
+      "lamps": "gi",
+      "keys": [
+        { "t": 0, "level": 7 },
+        { "t": 60, "level": 0 },
+        { "t": 100, "level": 7 }
+      ],
+      "sweep": { "dir": "up", "duration": 300, "ease": "linear" }
+    },
+    { "lamps": ["caps", "slings"], "keys": [{ "t": 0, "level": 0 }], "to": 500 },
+    { "lamps": "inserts", "blend": "accent", "envelope": "glint", "from": 1100, "sweep": { "dir": "up", "duration": 400 } }
+  ]
+}

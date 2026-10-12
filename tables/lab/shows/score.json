@@ -1,0 +1,20 @@
+{
+  "id": "score",
+  "description": "T3 at a shot (5.1), the combo's second rung: T2's sweep and arrow, its flasher once, a local ripple over the inserts round the shot (reach 96 px), its region hot for 200 ms.",
+  "tier": 3,
+  "length": 900,
+  "tokens": { "shot": "loop-left", "colour": "gold", "region": "gi.upper" },
+  "tracks": [
+    { "lamps": "ladder.$shot", "blend": "accent", "envelope": "glint", "fill": { "count": 3, "step": 40 } },
+    { "lamps": "arrow.$shot", "blend": "accent", "envelope": "glint", "at": [110] },
+    {
+      "lamps": "$region",
+      "keys": [
+        { "t": 0, "level": 8, "colour": "$colour" },
+        { "t": 200, "level": "under", "ease": "linear" }
+      ]
+    },
+    { "lamps": "flasher.$shot", "envelope": "flash", "at": [0] },
+    { "lamps": "inserts", "blend": "accent", "envelope": "glint", "radial": { "origin": "arrow.$shot", "speed": 500, "reach": 96, "rings": 2 } }
+  ]
+}

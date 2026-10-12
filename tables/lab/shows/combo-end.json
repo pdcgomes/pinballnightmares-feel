@@ -1,0 +1,14 @@
+{
+  "id": "combo-end",
+  "description": "N2, light.combo-end (5.3): the chain broken or ended. The rules' continuing shots fade out over 300 ms; over them a dim glint drains down both ladders, away from the arrows. Nothing brightens.",
+  "tier": "N2",
+  "length": 500,
+  "envelopes": {
+    "ebb": [
+      { "t": 0, "level": "under" },
+      { "t": 20, "level": 4, "ease": "linear" },
+      { "t": 100, "level": "under", "ease": "linear" }
+    ]
+  },
+  "tracks": [{ "lamps": "ladders", "blend": "accent", "envelope": "ebb", "sweep": { "dir": "down", "duration": 300, "ease": "linear" } }]
+}

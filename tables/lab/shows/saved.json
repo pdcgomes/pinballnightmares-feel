@@ -1,0 +1,27 @@
+{
+  "id": "saved",
+  "description": "T3, light.saved (ballsave.save, 5.3): the light surges back up the table from the falls, each region hot in moon-white as the wave reaches it, over 400 ms; shoot again flashes three times.",
+  "tier": 3,
+  "length": 900,
+  "tracks": [
+    {
+      "lamps": "gi",
+      "envelope": [
+        { "t": 0, "level": "under" },
+        { "t": 60, "level": 8, "colour": "moon", "ease": "linear" },
+        { "t": 300, "level": "under", "ease": "out" }
+      ],
+      "sweep": { "dir": "up", "duration": 400, "ease": "linear" }
+    },
+    {
+      "lamps": "shoot-again",
+      "blend": "accent",
+      "envelope": [
+        { "t": 0, "level": 8 },
+        { "t": 60, "level": 8 },
+        { "t": 62, "level": "under" }
+      ],
+      "at": [0, 125, 250]
+    }
+  ]
+}

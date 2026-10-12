@@ -1,0 +1,57 @@
+{
+  "table": "lab",
+  "units": "in",
+  "notes": "The feel lab's lamps, the lighting bible's 9.7 in the table bible's 3.11 ids, placed in inches on the lab's field (tables/lab/make.ts) and scaled by the table's pixels per inch at 288, 320 or 360 px. Caps sit on their buoys. The loops' arrows sit just outside each loop's mouth, between its exit guide's end and its wall's end, their ladders of three on the line from the far flipper's pivot (1 the far end, 3 by the arrow); the lane lamps above their rollovers; the slings' lamps inside their triangles; the meter up the shooter lane, 1 at the bottom; shoot again on the lip above the falls; the one flasher under the top arc, answering both loops. Two regions of general illumination meet at y 21 in, the loops' mouths' row.",
+  "lamps": [
+    { "id": "cap.buoy-top", "kind": "cap", "device": "buoy.top", "colour": "amber" },
+    { "id": "cap.buoy-left", "kind": "cap", "device": "buoy.left", "colour": "amber" },
+    { "id": "cap.buoy-right", "kind": "cap", "device": "buoy.right", "colour": "amber" },
+    { "id": "sling.left", "kind": "device", "device": "sling.left", "at": [3.797, 33.855], "colour": "amber" },
+    { "id": "sling.right", "kind": "device", "device": "sling.right", "at": [15.187, 33.855], "colour": "amber" },
+    { "id": "lane.torch-1", "kind": "insert", "device": "torch.left", "at": [7.7, 3.734], "colour": "amber" },
+    { "id": "lane.torch-2", "kind": "insert", "device": "torch.middle", "at": [9.5, 3.734], "colour": "amber" },
+    { "id": "lane.torch-3", "kind": "insert", "device": "torch.right", "at": [11.3, 3.734], "colour": "amber" },
+    { "id": "lane.t", "kind": "insert", "device": "lane.t", "at": [0.9, 31.957], "colour": "amber" },
+    { "id": "lane.i", "kind": "insert", "device": "lane.i", "at": [2.375, 30.944], "colour": "amber" },
+    { "id": "lane.d", "kind": "insert", "device": "lane.d", "at": [16.65, 30.944], "colour": "amber" },
+    { "id": "lane.e", "kind": "insert", "device": "lane.e", "at": [18.275, 31.957], "colour": "amber" },
+    { "id": "arrow.loop-left", "kind": "insert", "device": "loop.left", "at": [2.468, 22.781], "colour": "amber" },
+    { "id": "ladder.loop-left.1", "kind": "insert", "at": [4.185, 25.132], "colour": "amber", "size": 0.57 },
+    { "id": "ladder.loop-left.2", "kind": "insert", "at": [3.663, 24.416], "colour": "amber", "size": 0.57 },
+    { "id": "ladder.loop-left.3", "kind": "insert", "at": [3.14, 23.701], "colour": "amber", "size": 0.57 },
+    { "id": "arrow.loop-right", "kind": "insert", "device": "loop.right", "at": [15.82, 22.655], "colour": "amber" },
+    { "id": "ladder.loop-right.1", "kind": "insert", "at": [14.19, 25.066], "colour": "amber", "size": 0.57 },
+    { "id": "ladder.loop-right.2", "kind": "insert", "at": [14.686, 24.332], "colour": "amber", "size": 0.57 },
+    { "id": "ladder.loop-right.3", "kind": "insert", "at": [15.182, 23.598], "colour": "amber", "size": 0.57 },
+    { "id": "shoot-again", "kind": "insert", "at": [9.492, 40.5], "colour": "moon" },
+    { "id": "meter.plunger.1", "kind": "meter", "device": "plunger", "at": [19.6, 37.969], "colour": "amber" },
+    { "id": "meter.plunger.2", "kind": "meter", "device": "plunger", "at": [19.6, 36.302], "colour": "amber" },
+    { "id": "meter.plunger.3", "kind": "meter", "device": "plunger", "at": [19.6, 34.636], "colour": "amber" },
+    { "id": "meter.plunger.4", "kind": "meter", "device": "plunger", "at": [19.6, 32.969], "colour": "amber" },
+    { "id": "flasher.orbit", "kind": "flasher", "at": [9.492, 1.898], "colour": "gold", "halo": 2.0 }
+  ],
+  "groups": {
+    "ladder.loop-left": ["ladder.loop-left.1", "ladder.loop-left.2", "ladder.loop-left.3"],
+    "ladder.loop-right": ["ladder.loop-right.1", "ladder.loop-right.2", "ladder.loop-right.3"],
+    "ladders": ["ladder.loop-left", "ladder.loop-right"],
+    "arrows": ["arrow.loop-left", "arrow.loop-right"],
+    "lanes.tide": ["lane.t", "lane.i", "lane.d", "lane.e"],
+    "lanes.torch": ["lane.torch-1", "lane.torch-2", "lane.torch-3"],
+    "lanes": ["lanes.torch", "lanes.tide"],
+    "meter.plunger": ["meter.plunger.1", "meter.plunger.2", "meter.plunger.3", "meter.plunger.4"],
+    "slings": ["sling.left", "sling.right"],
+    "flasher.loop-left": ["flasher.orbit"],
+    "flasher.loop-right": ["flasher.orbit"]
+  },
+  "gi": {
+    "regions": [
+      { "id": "gi.upper", "from": 0, "to": 21 },
+      { "id": "gi.lower", "from": 21, "to": 42 }
+    ],
+    "blend": 1.0
+  },
+  "streaks": {
+    "buoys": ["buoy.top", "buoy.left", "buoy.right"],
+    "slings": ["sling.left", "sling.right"]
+  }
+}

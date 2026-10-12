@@ -1,0 +1,17 @@
+{
+  "id": "wipe-up",
+  "description": "The ball start after a drain (6.3): the general illumination wipes back up the table from the drain, from the drain look's 2 to the look's own level, in 500 ms. The first track holds every region at 2 until the wipe reaches it (a sweep leaves the lamps it hasn't reached alone), and the look comes in under the wipe.",
+  "tier": 2,
+  "length": 500,
+  "tracks": [
+    { "lamps": "gi", "envelope": [{ "t": 0, "level": 2 }] },
+    {
+      "lamps": "gi",
+      "envelope": [
+        { "t": 0, "level": 2 },
+        { "t": 250, "level": "under", "ease": "linear" }
+      ],
+      "sweep": { "dir": "up", "duration": 250, "ease": "linear" }
+    }
+  ]
+}

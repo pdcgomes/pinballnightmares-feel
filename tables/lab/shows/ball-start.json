@@ -1,0 +1,9 @@
+{
+  "id": "ball-start",
+  "description": "The ball start (6.3), a loop in beats until the launch stops it: the plunger lane's lamps chase up toward the launch, two a beat, one lit in four, over whatever the meter shows.",
+  "tier": 0,
+  "units": "beats",
+  "length": 2,
+  "loop": true,
+  "tracks": [{ "lamps": "meter.plunger", "blend": "accent", "envelope": "glint", "chase": { "step": 0.5, "on": 1, "off": 3 } }]
+}

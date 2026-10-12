@@ -1,0 +1,11 @@
+{
+  "id": "loop-in",
+  "description": "T1, the ball going up a loop's lane (loop.enter with the ball moving up): the light runs up the loop's ladder into its arrow with the ball, 40 ms a lamp. A stand-in until the rules' loop.made brings light.orbit; accents only, so the rules' lit states hold.",
+  "tier": 1,
+  "length": 200,
+  "tokens": { "shot": "loop-left" },
+  "tracks": [
+    { "lamps": "ladder.$shot", "blend": "accent", "envelope": "glint", "fill": { "count": 3, "step": 40 } },
+    { "lamps": "arrow.$shot", "blend": "accent", "envelope": "glint", "at": [110] }
+  ]
+}

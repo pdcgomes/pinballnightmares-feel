@@ -1,0 +1,15 @@
+{
+  "id": "drain-one",
+  "description": "N1, light.drain-one (5.3): a ball lost with others in play: the lower region dips two levels for 120 ms, and play goes on.",
+  "tier": "N1",
+  "length": 300,
+  "tracks": [
+    {
+      "lamps": "gi.lower",
+      "keys": [
+        { "t": 0, "level": -2 },
+        { "t": 120, "level": "under" }
+      ]
+    }
+  ]
+}

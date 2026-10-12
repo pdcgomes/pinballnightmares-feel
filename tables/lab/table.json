@@ -1,0 +1,837 @@
+{
+  "format": 1,
+  "id": "lab",
+  "name": "Feel lab: the table bible's section 7 field",
+  "version": 3,
+  "width": 320,
+  "height": 663.704,
+  "scale": {
+    "pxPerInch": 15.8025
+  },
+  "notes": "Made by tables/lab/make.ts at 320 px wide from the table bible's inches (20.25 x 42 in): edit the script, not this file.",
+  "gravity": [
+    0,
+    690.67
+  ],
+  "ball": {
+    "radius": 8.395,
+    "spawn": [
+      309.728,
+      613.906
+    ],
+    "maxSpeed": 4000,
+    "restitution": 0.9
+  },
+  "solver": {
+    "maxContacts": 8,
+    "restSpeed": 15.802,
+    "pushSpeed": 252.84,
+    "rolling": 15.802
+  },
+  "events": {
+    "impactSpeed": 47.407
+  },
+  "nudge": {
+    "speed": 126.42
+  },
+  "materials": {
+    "rubber": {
+      "restitution": [
+        [
+          0,
+          0.3
+        ],
+        [
+          79.012,
+          0.65
+        ],
+        [
+          632.099,
+          0.8
+        ],
+        [
+          2370.37,
+          0.7
+        ]
+      ],
+      "friction": 0.4,
+      "notes": "posts, slingshot faces, buoys"
+    },
+    "flipper": {
+      "restitution": [
+        [
+          0,
+          0.3
+        ],
+        [
+          158.025,
+          0.55
+        ],
+        [
+          948.148,
+          0.6
+        ],
+        [
+          3160.494,
+          0.5
+        ]
+      ],
+      "friction": 0.5
+    },
+    "metal": {
+      "restitution": [
+        [
+          0,
+          0.2
+        ],
+        [
+          316.049,
+          0.4
+        ],
+        [
+          2370.37,
+          0.35
+        ]
+      ],
+      "friction": 0.1,
+      "notes": "wire guides, rails, the gate"
+    },
+    "wood": {
+      "restitution": [
+        [
+          0,
+          0.2
+        ],
+        [
+          316.049,
+          0.45
+        ],
+        [
+          2370.37,
+          0.4
+        ]
+      ],
+      "friction": 0.2,
+      "notes": "the cabinet's sides"
+    },
+    "plastic": {
+      "restitution": [
+        [
+          0,
+          0.2
+        ],
+        [
+          316.049,
+          0.5
+        ],
+        [
+          2370.37,
+          0.45
+        ]
+      ],
+      "friction": 0.15
+    },
+    "plunger": {
+      "restitution": [
+        [
+          0,
+          0.2
+        ],
+        [
+          1580.247,
+          0.3
+        ]
+      ],
+      "friction": 0.2
+    }
+  },
+  "walls": [
+    {
+      "id": "left-wall",
+      "kind": "segment",
+      "a": [
+        3.951,
+        663.704
+      ],
+      "b": [
+        3.951,
+        161.975
+      ],
+      "material": "wood"
+    },
+    {
+      "id": "top-arc",
+      "kind": "arc",
+      "centre": [
+        161.185,
+        161.975
+      ],
+      "radius": 157.235,
+      "start": 180,
+      "end": 360,
+      "material": "metal"
+    },
+    {
+      "id": "shooter-wall",
+      "kind": "segment",
+      "a": [
+        318.42,
+        161.975
+      ],
+      "b": [
+        318.42,
+        663.704
+      ],
+      "material": "wood"
+    },
+    {
+      "id": "floor",
+      "kind": "segment",
+      "a": [
+        3.951,
+        663.704
+      ],
+      "b": [
+        301.037,
+        663.704
+      ],
+      "material": "wood"
+    },
+    {
+      "id": "shooter-lane-wall",
+      "kind": "segment",
+      "a": [
+        301.037,
+        663.704
+      ],
+      "b": [
+        301.037,
+        199.253
+      ],
+      "material": "wood"
+    },
+    {
+      "id": "shooter-cap",
+      "kind": "segment",
+      "a": [
+        301.037,
+        199.253
+      ],
+      "b": [
+        284.444,
+        234.836
+      ],
+      "material": "metal"
+    },
+    {
+      "id": "shooter-floor",
+      "kind": "segment",
+      "a": [
+        301.037,
+        662.123
+      ],
+      "b": [
+        318.42,
+        662.123
+      ],
+      "material": "wood"
+    },
+    {
+      "id": "left-loop-wall",
+      "kind": "segment",
+      "a": [
+        30.025,
+        339.753
+      ],
+      "b": [
+        30.025,
+        176.988
+      ],
+      "material": "metal"
+    },
+    {
+      "id": "left-loop-wall-top",
+      "kind": "segment",
+      "a": [
+        30.025,
+        132.741
+      ],
+      "b": [
+        30.025,
+        153.284
+      ],
+      "material": "metal"
+    },
+    {
+      "id": "left-inner-arc",
+      "kind": "arc",
+      "centre": [
+        134.795,
+        153.284
+      ],
+      "radius": 104.77,
+      "start": 180,
+      "end": 254.87,
+      "material": "metal"
+    },
+    {
+      "id": "right-loop-inner",
+      "kind": "segment",
+      "a": [
+        263.901,
+        339.753
+      ],
+      "b": [
+        263.901,
+        176.988
+      ],
+      "material": "metal"
+    },
+    {
+      "id": "right-loop-inner-top",
+      "kind": "segment",
+      "a": [
+        263.901,
+        132.741
+      ],
+      "b": [
+        263.901,
+        153.284
+      ],
+      "material": "metal"
+    },
+    {
+      "id": "right-inner-arc",
+      "kind": "arc",
+      "centre": [
+        156.429,
+        153.284
+      ],
+      "radius": 107.473,
+      "start": 289.78,
+      "end": 360,
+      "material": "metal"
+    },
+    {
+      "id": "right-loop-outer",
+      "kind": "segment",
+      "a": [
+        284.444,
+        234.836
+      ],
+      "b": [
+        284.444,
+        325.531
+      ],
+      "material": "metal"
+    },
+    {
+      "id": "exit-guide.left",
+      "kind": "arc",
+      "centre": [
+        76.642,
+        325.531
+      ],
+      "radius": 72.691,
+      "start": 140,
+      "end": 180,
+      "material": "metal"
+    },
+    {
+      "id": "exit-guide.right",
+      "kind": "arc",
+      "centre": [
+        211.753,
+        325.531
+      ],
+      "radius": 72.691,
+      "start": 0,
+      "end": 44,
+      "material": "metal"
+    },
+    {
+      "id": "torch-guide-1",
+      "kind": "segment",
+      "a": [
+        107.457,
+        52.148
+      ],
+      "b": [
+        107.457,
+        80.593
+      ],
+      "material": "metal"
+    },
+    {
+      "id": "torch-guide-2",
+      "kind": "segment",
+      "a": [
+        135.901,
+        52.148
+      ],
+      "b": [
+        135.901,
+        80.593
+      ],
+      "material": "metal"
+    },
+    {
+      "id": "torch-guide-3",
+      "kind": "segment",
+      "a": [
+        164.346,
+        52.148
+      ],
+      "b": [
+        164.346,
+        80.593
+      ],
+      "material": "metal"
+    },
+    {
+      "id": "torch-guide-4",
+      "kind": "segment",
+      "a": [
+        192.79,
+        52.148
+      ],
+      "b": [
+        192.79,
+        80.593
+      ],
+      "material": "metal"
+    },
+    {
+      "id": "sling.left.back",
+      "kind": "polyline",
+      "points": [
+        [
+          83.753,
+          562.568
+        ],
+        [
+          50.568,
+          553.086
+        ],
+        [
+          50.568,
+          494.617
+        ]
+      ],
+      "material": "plastic"
+    },
+    {
+      "id": "sling.right.back",
+      "kind": "polyline",
+      "points": [
+        [
+          216.494,
+          562.568
+        ],
+        [
+          249.679,
+          553.086
+        ],
+        [
+          249.679,
+          494.617
+        ]
+      ],
+      "material": "plastic"
+    },
+    {
+      "id": "lane-guide.left",
+      "kind": "polyline",
+      "points": [
+        [
+          24.494,
+          489.877
+        ],
+        [
+          24.494,
+          568.889
+        ],
+        [
+          93.904,
+          584.538
+        ]
+      ],
+      "material": "metal"
+    },
+    {
+      "id": "lane-guide.right",
+      "kind": "polyline",
+      "points": [
+        [
+          276.543,
+          489.877
+        ],
+        [
+          276.543,
+          568.889
+        ],
+        [
+          206.358,
+          584.534
+        ]
+      ],
+      "material": "metal"
+    },
+    {
+      "id": "lane-post.left",
+      "kind": "circle",
+      "centre": [
+        24.494,
+        489.877
+      ],
+      "radius": 2.37,
+      "material": "rubber"
+    },
+    {
+      "id": "lane-post.right",
+      "kind": "circle",
+      "centre": [
+        276.543,
+        489.877
+      ],
+      "radius": 2.37,
+      "material": "rubber"
+    },
+    {
+      "id": "apron.left",
+      "kind": "polyline",
+      "points": [
+        [
+          81.273,
+          614.046
+        ],
+        [
+          120.697,
+          633.168
+        ],
+        [
+          132.741,
+          641.58
+        ]
+      ],
+      "material": "plastic"
+    },
+    {
+      "id": "apron.right",
+      "kind": "polyline",
+      "points": [
+        [
+          218.974,
+          614.046
+        ],
+        [
+          179.55,
+          633.168
+        ],
+        [
+          167.506,
+          641.58
+        ]
+      ],
+      "material": "plastic"
+    }
+  ],
+  "flippers": [
+    {
+      "id": "left-flipper",
+      "control": "flipLeft",
+      "pivot": [
+        92.444,
+        591.012
+      ],
+      "length": 43.931,
+      "baseRadius": 6.637,
+      "tipRadius": 3.477,
+      "rest": 30,
+      "active": -28,
+      "material": "flipper",
+      "motion": {
+        "upAccel": 2400,
+        "upSpeed": 60,
+        "downAccel": 1200,
+        "downSpeed": 35,
+        "stopBounce": 0
+      }
+    },
+    {
+      "id": "right-flipper",
+      "control": "flipRight",
+      "pivot": [
+        207.802,
+        591.012
+      ],
+      "length": 43.931,
+      "baseRadius": 6.637,
+      "tipRadius": 3.477,
+      "rest": 150,
+      "active": 208,
+      "material": "flipper",
+      "motion": {
+        "upAccel": 2400,
+        "upSpeed": 60,
+        "downAccel": 1200,
+        "downSpeed": 35,
+        "stopBounce": 0
+      }
+    }
+  ],
+  "bumpers": [
+    {
+      "id": "buoy.top",
+      "kind": "buoy",
+      "centre": [
+        150.123,
+        104.296
+      ],
+      "radius": 22.123,
+      "material": "rubber",
+      "kick": 711.111,
+      "threshold": 0,
+      "cooldown": 40
+    },
+    {
+      "id": "buoy.left",
+      "kind": "buoy",
+      "centre": [
+        115.358,
+        158.025
+      ],
+      "radius": 22.123,
+      "material": "rubber",
+      "kick": 711.111,
+      "threshold": 0,
+      "cooldown": 40
+    },
+    {
+      "id": "buoy.right",
+      "kind": "buoy",
+      "centre": [
+        184.889,
+        158.025
+      ],
+      "radius": 22.123,
+      "material": "rubber",
+      "kick": 711.111,
+      "threshold": 0,
+      "cooldown": 40
+    }
+  ],
+  "slingshots": [
+    {
+      "id": "sling.left",
+      "kind": "sling",
+      "a": [
+        50.568,
+        494.617
+      ],
+      "b": [
+        83.753,
+        562.568
+      ],
+      "material": "rubber",
+      "kick": 632.099,
+      "threshold": 94.815,
+      "cooldown": 60
+    },
+    {
+      "id": "sling.right",
+      "kind": "sling",
+      "a": [
+        249.679,
+        494.617
+      ],
+      "b": [
+        216.494,
+        562.568
+      ],
+      "material": "rubber",
+      "kick": 632.099,
+      "threshold": 94.815,
+      "cooldown": 60
+    }
+  ],
+  "rollovers": [
+    {
+      "id": "lane.t",
+      "kind": "lane",
+      "a": [
+        12.346,
+        521.481
+      ],
+      "b": [
+        16.099,
+        521.481
+      ],
+      "radius": 3.16
+    },
+    {
+      "id": "lane.i",
+      "kind": "lane",
+      "a": [
+        32.889,
+        505.679
+      ],
+      "b": [
+        42.173,
+        505.679
+      ],
+      "radius": 3.16
+    },
+    {
+      "id": "lane.d",
+      "kind": "lane",
+      "a": [
+        258.074,
+        505.679
+      ],
+      "b": [
+        268.148,
+        505.679
+      ],
+      "radius": 3.16
+    },
+    {
+      "id": "lane.e",
+      "kind": "lane",
+      "a": [
+        284.938,
+        521.481
+      ],
+      "b": [
+        292.642,
+        521.481
+      ],
+      "radius": 3.16
+    },
+    {
+      "id": "torch.left",
+      "kind": "lane",
+      "a": [
+        115.852,
+        72.691
+      ],
+      "b": [
+        127.506,
+        72.691
+      ],
+      "radius": 3.16
+    },
+    {
+      "id": "torch.middle",
+      "kind": "lane",
+      "a": [
+        144.296,
+        72.691
+      ],
+      "b": [
+        155.951,
+        72.691
+      ],
+      "radius": 3.16
+    },
+    {
+      "id": "torch.right",
+      "kind": "lane",
+      "a": [
+        172.741,
+        72.691
+      ],
+      "b": [
+        184.395,
+        72.691
+      ],
+      "radius": 3.16
+    },
+    {
+      "id": "loop.left",
+      "kind": "loop",
+      "a": [
+        12.346,
+        300.247
+      ],
+      "b": [
+        21.63,
+        300.247
+      ],
+      "radius": 3.16
+    },
+    {
+      "id": "loop.right",
+      "kind": "loop",
+      "a": [
+        272.296,
+        300.247
+      ],
+      "b": [
+        276.049,
+        300.247
+      ],
+      "radius": 3.16
+    }
+  ],
+  "gates": [
+    {
+      "id": "gate.shooter",
+      "kind": "gate",
+      "a": [
+        318.42,
+        161.975
+      ],
+      "b": [
+        301.037,
+        199.253
+      ],
+      "pass": [
+        -1,
+        -0.4663
+      ],
+      "material": "metal"
+    }
+  ],
+  "plunger": {
+    "id": "plunger",
+    "control": "launch",
+    "a": [
+      301.037,
+      622.617
+    ],
+    "b": [
+      318.42,
+      622.617
+    ],
+    "launch": [
+      0,
+      -1
+    ],
+    "stroke": 23.704,
+    "pullTime": 800,
+    "speeds": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        2528.395
+      ]
+    ],
+    "material": "plunger"
+  },
+  "drain": {
+    "id": "falls",
+    "a": [
+      12.642,
+      654.222
+    ],
+    "b": [
+      292.346,
+      654.222
+    ],
+    "radius": 9.481
+  }
+}

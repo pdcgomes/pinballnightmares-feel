@@ -1,0 +1,18 @@
+{
+  "id": "mark",
+  "description": "T2 at a shot (5.1), the combo's first rung and any shot made: its arrow glints, a sweep along its ladder toward it, its region hot for 120 ms in the answer's colour.",
+  "tier": 2,
+  "length": 500,
+  "tokens": { "shot": "loop-left", "colour": "amber", "region": "gi.upper" },
+  "tracks": [
+    { "lamps": "ladder.$shot", "blend": "accent", "envelope": "glint", "fill": { "count": 3, "step": 40 } },
+    { "lamps": "arrow.$shot", "blend": "accent", "envelope": "glint", "at": [110] },
+    {
+      "lamps": "$region",
+      "keys": [
+        { "t": 0, "level": 8, "colour": "$colour" },
+        { "t": 120, "level": "under", "ease": "linear" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "touch",
+  "description": "T1, light.bumper and light.sling (the lighting bible's 5.3): a device's lamp blips to the peak its impact gives (6, 7 or 8, a level above its rest at least, 5.2) and falls back to its rest, which the streak's heat lifts. Restarts on every hit.",
+  "tier": 1,
+  "length": 200,
+  "tokens": { "lamps": "cap.buoy-top", "peak": 7 },
+  "tracks": [
+    {
+      "lamps": "$lamps",
+      "keys": [
+        { "t": 0, "level": "$peak" },
+        { "t": 30, "level": "$peak" },
+        { "t": 120, "level": "under", "ease": "linear" }
+      ]
+    }
+  ]
+}

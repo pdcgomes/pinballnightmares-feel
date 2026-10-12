@@ -1,0 +1,49 @@
+{
+  "description": "The shared envelopes (lighting bible, 4.2): keyframes of level over milliseconds, each key in the show schema's key format. under is whatever the claims below show; a negative level is that many levels below under; a key jumps unless it has an ease.",
+  "envelopes": {
+    "blip": [
+      { "t": 0, "level": 8 },
+      { "t": 30, "level": 8 },
+      { "t": 120, "level": "under", "ease": "linear" }
+    ],
+    "set": [
+      { "t": 0, "level": 8 },
+      { "t": 60, "level": 7 }
+    ],
+    "glint": [
+      { "t": 0, "level": "under" },
+      { "t": 16, "level": 8, "ease": "linear" },
+      { "t": 90, "level": "under", "ease": "linear" }
+    ],
+    "flash": [
+      { "t": 0, "level": "under" },
+      { "t": 8, "level": 8, "ease": "linear" },
+      { "t": 48, "level": 8 },
+      { "t": 248, "level": "under", "ease": "out" }
+    ],
+    "burst": [
+      { "t": 0, "level": "under" },
+      { "t": 8, "level": 8, "ease": "linear" },
+      { "t": 88, "level": 8 },
+      { "t": 488, "level": "under", "ease": "out" }
+    ],
+    "swell": [
+      { "t": 0, "level": "under" },
+      { "t": 250, "level": 6, "ease": "inOut" },
+      { "t": 350, "level": 6 },
+      { "t": 850, "level": "under", "ease": "inOut" }
+    ],
+    "flare": [
+      { "t": 0, "level": "under" },
+      { "t": 40, "level": 8, "ease": "linear" },
+      { "t": 240, "level": 8 },
+      { "t": 840, "level": "under", "ease": "out" }
+    ],
+    "dip": [
+      { "t": 0, "level": -3 },
+      { "t": 200, "level": "under" }
+    ],
+    "on": [{ "t": 0, "level": 7 }],
+    "off": [{ "t": 0, "level": 0 }]
+  }
+}

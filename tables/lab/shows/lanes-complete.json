@@ -1,0 +1,26 @@
+{
+  "id": "lanes-complete",
+  "description": "T3, light.lane for the set (torchlanes.complete, tidelanes.complete; 5.2 and 5.3): the set flashes three times at 8 Hz, accents on small lamps, then resets with a chase, 60 ms a lamp; its region hot for 200 ms; a local ripple over the inserts round it (reach 96 px).",
+  "tier": 3,
+  "length": 900,
+  "tokens": { "set": "lanes.tide", "region": "gi.lower" },
+  "envelopes": {
+    "strobe": [
+      { "t": 0, "level": 8 },
+      { "t": 60, "level": 8 },
+      { "t": 62, "level": "under" }
+    ]
+  },
+  "tracks": [
+    { "lamps": "$set", "blend": "accent", "envelope": "strobe", "at": [0, 125, 250] },
+    { "lamps": "$set", "blend": "accent", "envelope": "glint", "from": 420, "sweep": { "dir": "right", "duration": 180, "ease": "linear" } },
+    {
+      "lamps": "$region",
+      "keys": [
+        { "t": 0, "level": 8, "colour": "amber" },
+        { "t": 200, "level": "under", "ease": "linear" }
+      ]
+    },
+    { "lamps": "inserts", "blend": "accent", "envelope": "glint", "radial": { "origin": "$set", "speed": 500, "reach": 96 } }
+  ]
+}

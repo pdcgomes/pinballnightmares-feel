@@ -1,0 +1,16 @@
+{
+  "id": "tilt-warn",
+  "description": "N1, light.tilt-warn (5.3): the general illumination dips twice, two levels for 80 ms, 160 ms apart: a shudder, nothing brighter.",
+  "tier": "N1",
+  "length": 400,
+  "tracks": [
+    {
+      "lamps": "gi",
+      "envelope": [
+        { "t": 0, "level": -2 },
+        { "t": 80, "level": "under" }
+      ],
+      "at": [0, 160]
+    }
+  ]
+}

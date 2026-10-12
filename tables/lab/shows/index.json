@@ -1,0 +1,28 @@
+{
+  "notes": "The feel lab's shows (the lighting bible's 9.7), each a file in the bible's format (docs/studio/lighting-bible/show.schema.json), and the envelopes they share. src/show/load.ts reads this list and validates every show as it loads.",
+  "envelopes": "envelopes.json",
+  "shows": [
+    "touch",
+    "lane-roll",
+    "lane-slide",
+    "lanes-complete",
+    "loop-in",
+    "caps-turn",
+    "launch",
+    "ball-start",
+    "wipe-up",
+    "power-on",
+    "drain",
+    "drain-one",
+    "saved",
+    "tilt-warn",
+    "mark",
+    "score",
+    "feature",
+    "climax",
+    "combo-end",
+    "multiball-start",
+    "jackpot",
+    "attract"
+  ]
+}
